@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConvertPro — Convertisseur de Fichiers Ultra-Puissant | Powered by Coca-Cola Spirit</title>
+  <meta name="description" content="Convertissez PDF, Word, Excel, images et plus en quelques secondes. Gratuit, sécurisé, propulsé par l'IA. La plateforme de conversion #1.">
+  <meta property="og:title" content="ConvertPro — Convertisseur de Fichiers #1">
+  <meta property="og:description" content="PDF, Word, Excel, images — conversion instantanée et gratuite.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bubbles-bg" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="logo" aria-label="ConvertPro Accueil">
+      <svg class="logo-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <circle cx="22" cy="22" r="22" fill="#F40009"/>
+        <path d="M12 22 Q22 10 32 22 Q22 34 12 22Z" fill="white" opacity="0.9"/>
+        <circle cx="22" cy="22" r="4" fill="white"/>
+      </svg>
+      <span class="logo-text">Convert<span class="logo-accent">Pro</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <ul class="nav-list">
+        <li><a href="#outils" class="nav-link">Outils</a></li>
+        <li><a href="#ia" class="nav-link">IA <span class="badge-new">NEW</span></a></li>
+        <li><a href="#coca-cola" class="nav-link">Coca-Cola</a></li>
+        <li><a href="#api" class="nav-link">API</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-lang" onclick="toggleLang()" aria-label="Changer de langue">🌍 FR</button>
+      <a href="#convertir" class="btn-cta btn-cta-small">Convertir maintenant</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu mobile">
+  <button class="mobile-menu-close" onclick="toggleMenu()" aria-label="Fermer">✕</button>
+  <ul>
+    <li><a href="#outils" onclick="toggleMenu()">Outils</a></li>
+    <li><a href="#ia" onclick="toggleMenu()">IA</a></li>
+    <li><a href="#coca-cola" onclick="toggleMenu()">Coca-Cola</a></li>
+    <li><a href="#api" onclick="toggleMenu()">API</a></li>
+    <li><a href="#blog" onclick="toggleMenu()">Blog</a></li>
+  </ul>
+  <a href="#convertir" class="btn-cta" onclick="toggleMenu()">Convertir maintenant</a>
+</div>
+<div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="hero-gradient"></div>
+    <div class="hero-video-placeholder" aria-hidden="true">
+      <div class="coca-wave-hero"></div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <span class="hero-badge">✦ Plateforme #1 de Conversion ✦</span>
+    <h1 class="hero-title">Convertissez.<br>Librement.<br><span class="hero-accent">Comme jamais.</span></h1>
+    <p class="hero-subtitle">Plus de 200 outils de conversion alimentés par l'IA. PDF, Word, images, audio, vidéo — transformés en quelques secondes. Gratuit. Sécurisé. Instantané.</p>
+    <div class="hero-actions">
+      <a href="#convertir" class="btn-cta btn-cta-large">Commencer gratuitement →</a>
+      <a href="#outils" class="btn-outline btn-outline-large">Voir tous les outils</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num" id="counter1">0</span><span class="stat-label">Fichiers convertis aujourd'hui</span></div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat"><span class="stat-num">200+</span><span class="stat-label">Outils disponibles</span></div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat"><span class="stat-num">99.9%</span><span class="stat-label">Disponibilité</span></div>
+    </div>
+    <div class="hero-trust">
+      <span>🔒 Chiffrement AES-256</span>
+      <span>⚡ Conversion &lt; 10s</span>
+      <span>🗑️ Suppression auto 30min</span>
+      <span>🌍 50+ langues</span>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="scroll-indicator"></div>
+    <span>Défiler</span>
+  </div>
+</section>
+
+<section class="converter-section" id="convertir">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Convertir un fichier</h2>
+      <p class="section-subtitle">Déposez votre fichier et choisissez le format de sortie</p>
+    </div>
+    <div class="converter-box">
+      <div class="upload-zone" id="uploadZone" role="button" tabindex="0"
+           aria-label="Zone de dépôt de fichier"
+           ondrop="handleDrop(event)" ondragover="handleDragOver(event)"
+           ondragleave="handleDragLeave(event)" onclick="document.getElementById('fileInput').click()"
+           onkeydown="if(event.key==='Enter')document.getElementById('fileInput').click()">
+        <input type="file" id="fileInput" hidden multiple
+               accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png,.gif,.bmp,.tiff,.webp,.txt,.csv,.html,.epub,.mp3,.mp4,.wav"
+               onchange="handleFileSelect(event)">
+        <div class="upload-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="30" fill="rgba(244,0,9,0.08)" stroke="#F40009" stroke-width="2" stroke-dasharray="6 3"/>
+            <path d="M32 40V24M24 32l8-8 8 8" stroke="#F40009" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 44h24" stroke="#F40009" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="upload-text">Déposez votre fichier ici ou <span class="upload-link">cliquez pour parcourir</span></p>
+        <p class="upload-hint">PDF, Word, Excel, PowerPoint, Images, Audio, Vidéo — Max 100 MB</p>
+      </div>
+
+      <div class="converter-options" id="converterOptions" hidden>
+        <div class="file-info" id="fileInfo"></div>
+        <div class="format-select-wrapper">
+          <label for="outputFormat" class="format-label">Convertir vers :</label>
+          <select id="outputFormat" class="format-select" aria-label="Format de sortie"></select>
+        </div>
+        <div class="quality-options">
+          <span class="quality-label">Qualité :</span>
+          <label class="quality-radio"><input type="radio" name="quality" value="high" checked> Haute</label>
+          <label class="quality-radio"><input type="radio" name="quality" value="medium"> Moyenne</label>
+          <label class="quality-radio"><input type="radio" name="quality" value="low"> Légère</label>
+        </div>
+        <button class="btn-cta btn-cta-large btn-convert" id="convertBtn" onclick="startConversion()">⚡ Convertir maintenant</button>
+      </div>
+
+      <div class="progress-section" id="progressSection" hidden>
+        <p class="progress-status" id="progressStatus">Analyse du fichier...</p>
+        <div class="progress-bar-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+        <p class="progress-percent" id="progressPercent">0%</p>
+      </div>
+
+      <div class="result-section" id="resultSection" hidden>
+        <div class="result-icon" aria-hidden="true">✅</div>
+        <h3 class="result-title">Conversion réussie !</h3>
+        <p class="result-info" id="resultInfo"></p>
+        <div class="result-actions">
+          <button class="btn-cta btn-cta-large" onclick="downloadResult()">⬇️ Télécharger</button>
+          <button class="btn-outline" onclick="resetConverter()">Convertir un autre fichier</button>
+        </div>
+        <p class="result-warning">🔒 Fichier supprimé automatiquement dans <span id="countdown">30:00</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="catalog-section" id="outils">
+  <div class="container">
+    <div class="catalog-row">
+      <div class="catalog-row-header">
+        <h2 class="catalog-row-title">🔥 Outils Tendance</h2>
+        <a href="#" class="catalog-see-all">Voir tout →</a>
+      </div>
+      <div class="catalog-scroll-wrapper">
+        <button class="scroll-btn scroll-btn-left" onclick="scrollRow(this,-1)" aria-label="Défiler à gauche">‹</button>
+        <div class="catalog-cards" id="row-trending"></div>
+        <button class="scroll-btn scroll-btn-right" onclick="scrollRow(this,1)" aria-label="Défiler à droite">›</button>
+      </div>
+    </div>
+    <div class="catalog-row">
+      <div class="catalog-row-header">
+        <h2 class="catalog-row-title">📄 Tout sur le PDF</h2>
+        <a href="#" class="catalog-see-all">Voir tout →</a>
+      </div>
+      <div class="catalog-scroll-wrapper">
+        <button class="scroll-btn scroll-btn-left" onclick="scrollRow(this,-1)" aria-label="Défiler à gauche">‹</button>
+        <div class="catalog-cards" id="row-pdf"></div>
+        <button class="scroll-btn scroll-btn-right" onclick="scrollRow(this,1)" aria-label="Défiler à droite">›</button>
+      </div>
+    </div>
+    <div class="catalog-row" id="ia">
+      <div class="catalog-row-header">
+        <h2 class="catalog-row-title">🤖 Propulsés par l'IA <span class="badge-new">NEW</span></h2>
+        <a href="#" class="catalog-see-all">Voir tout →</a>
+      </div>
+      <div class="catalog-scroll-wrapper">
+        <button class="scroll-btn scroll-btn-left" onclick="scrollRow(this,-1)" aria-label="Défiler à gauche">‹</button>
+        <div class="catalog-cards" id="row-ai"></div>
+        <button class="scroll-btn scroll-btn-right" onclick="scrollRow(this,1)" aria-label="Défiler à droite">›</button>
+      </div>
+    </div>
+    <div class="catalog-row">
+      <div class="catalog-row-header">
+        <h2 class="catalog-row-title">🖼️ Images & Médias</h2>
+        <a href="#" class="catalog-see-all">Voir tout →</a>
+      </div>
+      <div class="catalog-scroll-wrapper">
+        <button class="scroll-btn scroll-btn-left" onclick="scrollRow(this,-1)" aria-label="Défiler à gauche">‹</button>
+        <div class="catalog-cards" id="row-media"></div>
+        <button class="scroll-btn scroll-btn-right" onclick="scrollRow(this,1)" aria-label="Défiler à droite">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Pourquoi ConvertPro ?</span>
+      <h2 class="section-title">Tout ce que les autres n'ont pas</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">⚡</div><h3 class="feature-title">Conversion Ultra-Rapide</h3><p class="feature-desc">Traitement parallèle multi-thread. La plupart des fichiers convertis en moins de 10 secondes.</p></div>
+      <div class="feature-card"><div class="feature-icon">🤖</div><h3 class="feature-title">IA Intégrée</h3><p class="feature-desc">Résumé automatique, extraction de données, OCR 50+ langues, transcription audio/vidéo.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔒</div><h3 class="feature-title">Sécurité Maximale</h3><p class="feature-desc">Chiffrement AES-256, suppression auto après 30 min, aucun stockage permanent de vos données.</p></div>
+      <div class="feature-card"><div class="feature-icon">🌍</div><h3 class="feature-title">200+ Formats</h3><p class="feature-desc">PDF, Office, images, audio, vidéo, code, ebooks — tous les formats du marché couverts.</p></div>
+      <div class="feature-card"><div class="feature-icon">📦</div><h3 class="feature-title">Traitement en Masse</h3><p class="feature-desc">Convertissez jusqu'à 50 fichiers simultanément. Idéal pour les professionnels.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔌</div><h3 class="feature-title">API Publique</h3><p class="feature-desc">Intégrez nos outils dans vos apps. Documentation complète, SDKs disponibles.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="coca-section" id="coca-cola">
+  <div class="coca-bg" aria-hidden="true">
+    <div class="coca-wave-top"></div>
+    <div class="coca-wave-bottom"></div>
+  </div>
+  <div class="container">
+    <div class="coca-content">
+      <div class="coca-text">
+        <span class="coca-tag">Univers Coca-Cola</span>
+        <h2 class="coca-title">L'esprit Coca-Cola<br>dans chaque conversion</h2>
+        <p class="coca-quote">"Aussi simple que d'ouvrir un Coca-Cola.<br>Aussi puissant que l'imagination."</p>
+        <p class="coca-desc">Depuis 1886, Coca-Cola rafraîchit le monde. Depuis 2026, ConvertPro transforme vos fichiers avec le même esprit : innovation, joie, et excellence.</p>
+        <div class="coca-btns">
+          <a href="#coca-histoire" class="btn-white">Découvrir l'histoire →</a>
+          <a href="#coca-galerie" class="btn-coca-outline">Voir la galerie</a>
+        </div>
+        <div class="coca-slogans">
+          <span>"Taste the Feeling"</span>
+          <span>"Open Happiness"</span>
+          <span>"Always Coca-Cola"</span>
+        </div>
+      </div>
+      <div class="coca-visual" aria-hidden="true">
+        <div class="coca-bottle-wrap">
+          <div class="coca-bottle">
+            <div class="coca-bottle-body">
+              <div class="coca-bottle-label"><span class="coca-script">Coca-Cola</span></div>
+              <div class="coca-bottle-bubbles">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+          <div class="coca-glow"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="coca-tabs">
+      <div class="coca-tab-nav" role="tablist">
+        <button class="coca-tab-btn active" role="tab" aria-selected="true" onclick="showCocaTab('histoire',this)">Histoire</button>
+        <button class="coca-tab-btn" role="tab" aria-selected="false" onclick="showCocaTab('campagnes',this)">Campagnes</button>
+        <button class="coca-tab-btn" role="tab" aria-selected="false" onclick="showCocaTab('monde',this)">Dans le Monde</button>
+        <button class="coca-tab-btn" role="tab" aria-selected="false" onclick="showCocaTab('jeu',this)">Mini-Jeu</button>
+      </div>
+
+      <div class="coca-tab-content active" id="coca-tab-histoire" role="tabpanel">
+        <div class="timeline">
+          <div class="timeline-item"><span class="timeline-year">1886</span><div class="timeline-body"><h4>La naissance</h4><p>John Pemberton invente Coca-Cola à Atlanta, vendu pour 5 cents le verre.</p></div></div>
+          <div class="timeline-item"><span class="timeline-year">1915</span><div class="timeline-body"><h4>La bouteille contour</h4><p>La bouteille iconique est conçue — reconnaissable même dans le noir.</p></div></div>
+          <div class="timeline-item"><span class="timeline-year">1931</span><div class="timeline-body"><h4>Le Père Noël rouge</h4><p>Coca-Cola popularise l'image moderne du Père Noël en rouge et blanc.</p></div></div>
+          <div class="timeline-item"><span class="timeline-year">1993</span><div class="timeline-body"><h4>"Always Coca-Cola"</h4><p>La campagne publicitaire la plus mémorable de la décennie.</p></div></div>
+          <div class="timeline-item"><span class="timeline-year">2011</span><div class="timeline-body"><h4>"Share a Coke"</h4><p>Les prénoms sur les bouteilles — un phénomène mondial viral.</p></div></div>
+          <div class="timeline-item"><span class="timeline-year">2026</span><div class="timeline-body"><h4>ConvertPro × Coca-Cola</h4><p>L'esprit Coca-Cola rencontre la puissance de la conversion de fichiers.</p></div></div>
+        </div>
+      </div>
+
+      <div class="coca-tab-content" id="coca-tab-campagnes" role="tabpanel">
+        <div class="campagnes-grid">
+          <div class="campagne-card"><div class="campagne-year">1993</div><h4>Always Coca-Cola</h4><p>La campagne qui a défini une décennie entière.</p></div>
+          <div class="campagne-card"><div class="campagne-year">1995</div><h4>Holidays Are Coming</h4><p>Les camions lumineux qui annoncent Noël depuis 30 ans.</p></div>
+          <div class="campagne-card"><div class="campagne-year">2009</div><h4>Open Happiness</h4><p>Ouvrir une bouteille, ouvrir le bonheur.</p></div>
+          <div class="campagne-card"><div class="campagne-year">2011</div><h4>Share a Coke</h4><p>Votre prénom sur une bouteille. Révolution mondiale.</p></div>
+          <div class="campagne-card"><div class="campagne-year">2016</div><h4>Taste the Feeling</h4><p>Chaque gorgée, une émotion. Slogan toujours actuel.</p></div>
+          <div class="campagne-card"><div class="campagne-year">2023</div><h4>Be a Maker</h4><p>Créer avec passion — l'esprit de ConvertPro.</p></div>
+        </div>
+      </div>
+
+      <div class="coca-tab-content" id="coca-tab-monde" role="tabpanel">
+        <div class="monde-grid">
+          <div class="monde-item" onclick="showCountry('france')"><span class="monde-flag">🇫🇷</span><span>France</span></div>
+          <div class="monde-item" onclick="showCountry('usa')"><span class="monde-flag">🇺🇸</span><span>États-Unis</span></div>
+          <div class="monde-item" onclick="showCountry('japon')"><span class="monde-flag">🇯🇵</span><span>Japon</span></div>
+          <div class="monde-item" onclick="showCountry('mexique')"><span class="monde-flag">🇲🇽</span><span>Mexique</span></div>
+          <div class="monde-item" onclick="showCountry('inde')"><span class="monde-flag">🇮🇳</span><span>Inde</span></div>
+          <div class="monde-item" onclick="showCountry('bresil')"><span class="monde-flag">🇧🇷</span><span>Brésil</span></div>
+          <div class="monde-item" onclick="showCountry('australie')"><span class="monde-flag">🇦🇺</span><span>Australie</span></div>
+          <div class="monde-item" onclick="showCountry('maroc')"><span class="monde-flag">🇲🇦</span><span>Maroc</span></div>
+        </div>
+        <div class="country-detail" id="countryDetail" hidden>
+          <h4 id="countryName"></h4>
+          <p id="countryInfo"></p>
+        </div>
+      </div>
+
+      <div class="coca-tab-content" id="coca-tab-jeu" role="tabpanel">
+        <div class="game-container">
+          <h3 class="game-title">Attrapez les bouteilles ! 🎮</h3>
+          <div class="game-stats">
+            <span>Score : <strong id="gameScore">0</strong></span>
+            <span>Temps : <strong id="gameTime">30</strong>s</span>
+            <span>Record : <strong id="gameRecord">0</strong></span>
+          </div>
+          <div class="game-board" id="gameBoard" role="region" aria-label="Jeu Coca-Cola">
+            <div class="game-start" id="gameStart">
+              <p>🥤 Attrapez un maximum de bouteilles Coca-Cola !</p>
+              <button class="btn-cta" onclick="startGame()">Jouer</button>
+            </div>
+          </div>
+          <div class="game-badge" id="gameBadge" hidden><span>🏆 Coca-Cola Superfan</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="api-section" id="api">
+  <div class="container">
+    <div class="api-grid">
+      <div class="api-text">
+        <span class="section-tag">Pour les développeurs</span>
+        <h2 class="section-title">API REST Publique</h2>
+        <p>Intégrez ConvertPro dans vos applications. Rate limit généreux, documentation complète, SDKs JavaScript, Python et PHP.</p>
+        <ul class="api-features">
+          <li>✓ 100 conversions/jour gratuitement</li>
+          <li>✓ Réponse JSON standardisée</li>
+          <li>✓ Webhook de notification</li>
+          <li>✓ SLA 99.9% garanti</li>
+          <li>✓ Support prioritaire</li>
+        </ul>
+        <a href="#" class="btn-cta">Obtenir une clé API →</a>
+      </div>
+      <div class="api-code">
+        <div class="code-window">
+          <div class="code-header">
+            <span class="code-dot red"></span>
+            <span class="code-dot yellow"></span>
+            <span class="code-dot green"></span>
+            <span class="code-title">Exemple API</span>
+          </div>
+          <pre class="code-body"><code><span class="code-comment">// Conversion PDF → Word</span>
+<span class="code-keyword">const</span> response = <span class="code-keyword">await</span> fetch(
+  <span class="code-string">'https://api.convertpro.io/v1/convert'</span>,
+  {
+    method: <span class="code-string">'POST'</span>,
+    headers: {
+      <span class="code-string">'Authorization'</span>: <span class="code-string">`Bearer ${API_KEY}`</span>,
+      <span class="code-string">'Content-Type'</span>: <span class="code-string">'multipart/form-data'</span>
+    },
+    body: formData
+  }
+);
+<span class="code-keyword">const</span> { download_url } = <span class="code-keyword">await</span> response.json();
+<span class="code-comment">// ✅ URL prête en &lt; 5 secondes</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-section" id="blog">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Guides & Tutoriels</span>
+      <h2 class="section-title">Apprendre & Maîtriser</h2>
+    </div>
+    <div class="blog-grid" id="blogGrid"></div>
+  </div>
+</section>
+
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Ils nous font confiance</span>
+      <h2 class="section-title">Ce que disent nos utilisateurs</h2>
+    </div>
+    <div class="testimonials-track" id="testimonialsTrack"></div>
+    <div class="testimonials-dots" id="testimonialsDots" role="tablist"></div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">FAQ</span>
+      <h2 class="section-title">Questions fréquentes</h2>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="cta-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title">Prêt à convertir ?</h2>
+      <p class="cta-subtitle">Rejoignez 2 millions d'utilisateurs qui font confiance à ConvertPro chaque jour.</p>
+      <a href="#convertir" class="btn-cta btn-cta-large btn-cta-white">Commencer gratuitement — C'est gratuit →</a>
+      <p class="cta-note">Aucune inscription requise · Aucune carte bancaire · 100% gratuit</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,40 Q360,0 720,40 Q1080,80 1440,40 L1440,60 L0,60 Z" fill="#0A0A0A"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo footer-logo">
+          <svg class="logo-icon" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="22" fill="#F40009"/>
+            <path d="M12 22 Q22 10 32 22 Q22 34 12 22Z" fill="white" opacity="0.9"/>
+            <circle cx="22" cy="22" r="4" fill="white"/>
+          </svg>
+          <span class="logo-text">Convert<span class="logo-accent">Pro</span></span>
+        </a>
+        <p class="footer-tagline">Convertissez votre talent.<br>Rafraîchissez votre journée.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter" class="social-btn">𝕏</a>
+          <a href="#" aria-label="LinkedIn" class="social-btn">in</a>
+          <a href="#" aria-label="GitHub" class="social-btn">⌥</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Outils PDF</h4><ul><li><a href="#">PDF vers Word</a></li><li><a href="#">PDF vers Excel</a></li><li><a href="#">Fusionner PDF</a></li><li><a href="#">Compresser PDF</a></li><li><a href="#">PDF vers JPG</a></li></ul></div>
+      <div class="footer-col"><h4>Outils IA</h4><ul><li><a href="#">Résumé PDF</a></li><li><a href="#">OCR Avancé</a></li><li><a href="#">Transcription Audio</a></li><li><a href="#">Suppression fond</a></li><li><a href="#">Upscaling Image</a></li></ul></div>
+      <div class="footer-col"><h4>Entreprise</h4><ul><li><a href="#">API Publique</a></li><li><a href="#">Documentation</a></li><li><a href="#">Plans Pro</a></li><li><a href="#">Partenariats</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Légal</h4><ul><li><a href="#">Confidentialité</a></li><li><a href="#">CGU</a></li><li><a href="#">Cookies</a></li><li><a href="#">RGPD</a></li><li><a href="#">À propos</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ConvertPro. Tous droits réservés. Fait avec ❤️ et l'esprit Coca-Cola.</p>
+      <p class="footer-disclaimer">ConvertPro n'est pas affilié à The Coca-Cola Company.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Gestion des cookies">
+  <p>🍪 Nous utilisons des cookies pour améliorer votre expérience. <a href="#">En savoir plus</a></p>
+  <div class="cookie-btns">
+    <button class="btn-cta" onclick="acceptCookies()">Accepter</button>
+    <button class="btn-outline" onclick="declineCookies()">Refuser</button>
+  </div>
+</div>
+
+<button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Retour en haut">↑</button>
+
+<script src="app.js"></script>
+</body>
+</html>
